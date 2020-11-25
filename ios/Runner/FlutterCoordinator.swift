@@ -15,12 +15,10 @@ final class FlutterCoordinator: BaseCoordinator{
     override func start() {
         super.start()
         navigationController?.popToRootViewController(animated: true)
-        
     }
     
     init(navigationController: UINavigationController?) {
         super.init()
         self.navigationController = navigationController
     }
-    
 }

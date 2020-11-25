@@ -22,22 +22,6 @@ import Flutter
             self.handle(call, result)
         }
 
-//        passChannel.setMethodCallHandler({
-//            (call: FlutterMethodCall, result: FlutterResult) -> Void in
-//            guard call.method == "createPassWithURL" else {
-//                result(FlutterMethodNotImplemented)
-//                return
-//            }
-//
-//            let args: NSDictionary = call.arguments as! NSDictionary
-//            guard let passURL = args["passURL"] as? NSString else {
-//                return
-//            }
-//
-//            print(passURL)
-//            self.mainCoordinator?.start()
-//        })
-
         GeneratedPluginRegistrant.register(with: self)
         let navigationController = UINavigationController(rootViewController: flutterViewController)
         navigationController.isNavigationBarHidden = true
@@ -52,12 +36,13 @@ import Flutter
         switch call.method {
         case "createPassWithURL":
             let args: NSDictionary = call.arguments as! NSDictionary
-            guard let passURL = args["passURL"] as? NSString else {
+            guard let passURL = args["passURL"] as? String else {
                 return
             }
             
             print(passURL)
             self.mainCoordinator?.start()
+            self.mainCoordinator?.downloadAndSetPassWithURL(url: passURL)
         default:
             result(FlutterMethodNotImplemented)
         }

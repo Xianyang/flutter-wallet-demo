@@ -13,7 +13,6 @@
 		62884D66256E0E70005744E1 /* PassCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62884D65256E0E70005744E1 /* PassCoordinator.swift */; };
 		62884D68256E0E87005744E1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62884D67256E0E87005744E1 /* Coordinator.swift */; };
 		62884D6A256E0E8D005744E1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62884D69256E0E8D005744E1 /* AppCoordinator.swift */; };
-		62884D6C256E136B005744E1 /* Generic.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 62884D6B256E136B005744E1 /* Generic.pkpass */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -41,7 +40,6 @@
 		62884D65256E0E70005744E1 /* PassCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassCoordinator.swift; path = Runner/PassCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		62884D67256E0E87005744E1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Runner/Coordinator.swift; sourceTree = SOURCE_ROOT; };
 		62884D69256E0E8D005744E1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Runner/AppCoordinator.swift; sourceTree = SOURCE_ROOT; };
-		62884D6B256E136B005744E1 /* Generic.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = Generic.pkpass; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				62884D6B256E136B005744E1 /* Generic.pkpass */,
 				62884D64256E0E65005744E1 /* Pass */,
 				62884D63256E0E58005744E1 /* App */,
 				62884D60256E0E41005744E1 /* Flutter */,
@@ -200,7 +197,6 @@
 			files = (
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
-				62884D6C256E136B005744E1 /* Generic.pkpass in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 			);

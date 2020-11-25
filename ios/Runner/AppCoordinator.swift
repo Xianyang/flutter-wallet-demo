@@ -18,7 +18,10 @@ class AppCoordinator: BaseCoordinator {
     
     override func start() {
         super.start()
-        navigateToNewsViewController()
+    }
+    
+    func downloadAndSetPassWithURL(url: String) {
+        navigateToPassViewControllerWithURL(url: url)
     }
 }
 
@@ -27,7 +30,7 @@ protocol PassToAppCoordinatorDelegate: class {
 }
 
 protocol FlutterToAppCoordinatorDelegate: class {
-    func navigateToNewsViewController()
+    func navigateToPassViewControllerWithURL(url: String)
 }
 
 extension AppCoordinator: PassToAppCoordinatorDelegate {
@@ -40,10 +43,11 @@ extension AppCoordinator: PassToAppCoordinatorDelegate {
 }
 
 extension AppCoordinator: FlutterToAppCoordinatorDelegate {
-    func navigateToNewsViewController(){
+    func navigateToPassViewControllerWithURL(url: String){
         let coordinator = PassCoordinator(navigationController: self.navigationController)
         coordinator.delegate = self
         self.add(coordinator)
         coordinator.start()
+        coordinator.retrievePass(url: url)
     }
 }

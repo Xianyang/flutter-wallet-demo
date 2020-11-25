@@ -20,8 +20,49 @@ final class PassCoordinator: BaseCoordinator {
     
     override func start() {
         super.start()
+    }
+    
+    func retrievePass(url: String) {
+        let url = URL(string: url)!
         
-        loadWalletView()
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data as NSData? else {
+                return
+            }
+            
+            print("successfully retrieved pass data from server")
+            
+            DispatchQueue.main.async {
+                self.openPassWithData(passData: data)
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func openPassWithData(passData : NSData) {
+        do {
+            let newpass = try PKPass.init(data: passData as Data)
+            let addController =  PKAddPassesViewController(pass: newpass)
+            addController?.delegate = navigationController as? PKAddPassesViewControllerDelegate
+            navigationController?.present(addController!, animated: true)
+        } catch {
+            let alert = UIAlertController(title: "Error", message: "PassKit not available", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                case .cancel:
+                    print("cancel")
+                case .destructive:
+                    print("destructive")
+                @unknown default:
+                    break
+                }}))
+            navigationController?.present(alert, animated: true, completion: nil)
+
+            print(error)
+        }
     }
     
     //Function to open wallet view in your app.
@@ -53,7 +94,7 @@ final class PassCoordinator: BaseCoordinator {
                 }
             }
 
-        }catch {
+        } catch {
             print(error.localizedDescription)
         }
     }
@@ -87,4 +128,6 @@ final class PassCoordinator: BaseCoordinator {
             print(error)
         }
     }
+    
+    
 }
