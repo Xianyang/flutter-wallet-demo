@@ -6,7 +6,7 @@ Currently there is no offical or third-party package in Flutter to directly inte
 
 ### 1.1. iOS
 
-In iOS, passes are represented by files with extension `.pkpass`. To create a pass, follows offical guide [here](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/YourFirst.html#//apple_ref/doc/uid/TP40012195-CH2-SW1). 
+In iOS, passes are represented by files with extension `.pkpass`. To create a pass, please follow the [offical guide](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/PassKit_PG/YourFirst.html#//apple_ref/doc/uid/TP40012195-CH2-SW1). 
 
 I have created a pass with information below:
 
